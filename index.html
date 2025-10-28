@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESF Knowledge Hub - Remote Learning</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <div id="top-nav-bar" class="hidden">
+            <button id="change-role-btn">Change Role</button>
+            <button id="show-all-nodes-btn">Show Me Everything</button>
+        </div>
+        <div id="triage-container">
+            <div id="triage-modal">
+                <img src="ESF-red-circle-white-text.png" alt="ESF Logo" class="triage-logo">
+                <h2>Welcome to the ESF Knowledge Hub</h2>
+                <p>To help personalize your experience, please select your primary role:</p>
+                <div class="role-buttons">
+                    <button class="role-btn" data-role="Educator">Educator</button>
+                    <button class="role-btn" data-role="School Leader">School Leader</button>
+                    <button class="role-btn" data-role="Centre Teams">Centre Teams</button>
+                    <button class="role-btn" data-role="Senior Leadership">Senior Leadership</button>
+                </div>
+                 <p class="small-text">Or, <a href="#" id="show-all-btn">show me everything</a>.</p>
+            </div>
+        </div>
+        <div id="settings-toggle-btn">⚙️</div>
+        <div id="settings-panel" class="hidden">
+            <h3>Display Settings</h3>
+            <div class="setting-control"><label for="size-slider">Card Size</label><input type="range" id="size-slider" min="100" max="160" value="104"></div>
+            <div class="setting-control"><label for="spacing-slider">Spacing</label><input type="range" id="spacing-slider" min="0.5" max="1.2" value="0.8" step="0.05"></div>
+            <div class="setting-control"><label for="text-size-slider">Text Size</label><input type="range" id="text-size-slider" min="0.5" max="1.5" value="1" step="0.1"></div>
+            <div class="setting-control">
+                <label>Color Theme</label>
+                <div class="theme-buttons">
+                    <button class="theme-btn active" data-theme="default">ESF Red</button>
+                    <button class="theme-btn" data-theme="cool">Cool Blue</button>
+                    <button class="theme-btn" data-theme="vibrant">Vibrant</button>
+                </div>
+            </div>
+            <button id="settings-close-btn">Close</button>
+        </div>
+        <div id="vision-pills-container" class="hidden">
+            <div class="vision-pill-wrapper left-pills"><div class="vision-pill" data-keyword="Agile">Agile</div><div class="vision-pill" data-keyword="Aligned">Aligned</div><div class="vision-pill" data-keyword="Accountable">Accountable</div></div>
+            <div class="vision-pill-wrapper right-pills"><div class="vision-pill" data-keyword="Belonging">Belonging</div><div class="vision-pill" data-keyword="Engagement">Engagement</div><div class="vision-pill" data-keyword="Personalisation">Personalisation</div></div>
+        </div>
+        <div class="graph-container">
+            <div class="node hub"><div class="hub-logo-container"><img src="ESF-white-circle-red-text.png" alt="ESF Logo"></div><div class="hub-text-container">Hybrid Learning @ ESF</div></div>
+            
+            <a href="Senior Leaders - Summary of Research and Recommendations.mp4" class="video-link" id="video-link-top">🎬 Video - Key Findings & Recommendations</a>
+            <a href="Introduction & Insights for Vision 2030.mp4" class="video-link" id="video-link-bottom">🎬 Video - Vision 2030 Connections</a>
+
+            <div class="node spoke" style="--i:0;" data-node-index="0"><div class="node-content"><div class="node-icon">🔄</div><div class="node-title">Hybrid Teaching Outperforms</div></div></div>
+            <div class="node spoke" style="--i:1;" data-node-index="1"><div class="node-content"><div class="node-icon">🌍</div><div class="node-title">The Real Digital Divide is Use</div></div></div>
+            <div class="node spoke" style="--i:2;" data-node-index="2"><div class="node-content"><div class="node-icon">❤️</div><div class="node-title">Wellbeing by Design</div></div></div>
+            <div class="node spoke" style="--i:3;" data-node-index="3"><div class="node-content"><div class="node-icon">💬</div><div class="node-title">Engagement Requires Presence</div></div></div>
+            <div class="node spoke" style="--i:4;" data-node-index="4"><div class="node-content"><div class="node-icon">🎯</div><div class="node-title">Pedagogy First, Tech Second</div></div></div>
+            <div class="node spoke" style="--i:5;" data-node-index="5"><div class="node-content"><div class="node-icon">🧠</div><div class="node-title">Clarity Prevents Overload</div></div></div>
+            <div class="node spoke" style="--i:6;" data-node-index="6"><div class="node-content"><div class="node-icon">📝</div><div class="node-title">Authentic Assessment Boosts Integrity</div></div></div>
+            <div class="node spoke" style="--i:7;" data-node-index="7"><div class="node-content"><div class="node-icon">⏳</div><div class="node-title">Teacher Workload is a Systemic Risk</div></div></div>
+            <div class="node spoke" style="--i:8;" data-node-index="8"><div class="node-content"><div class="node-icon">📢</div><div class="node-title">Frame the Narrative: Strategy vs. Crisis</div></div></div>
+            <div class="node spoke" style="--i:9;" data-node-index="9"><div class="node-content"><div class="node-icon">🎛️</div><div class="node-title">Flexibility is the New Expectation</div></div></div>
+            <div class="node spoke" style="--i:10;" data-node-index="10"><div class="node-content"><div class="node-icon">⚖️</div><div class="node-title">Live Teaching Is Not Always Best</div></div></div>
+            <div class="node spoke" style="--i:11;" data-node-index="11"><div class="node-content"><div class="node-icon">🤝</div><div class="node-title">Parents are Now Partners</div></div></div>
+        </div>
+        <div id="modal-container" class="hidden">
+            <div id="modal-content"><button id="modal-close-btn">×</button><h2 id="modal-title"></h2><div id="modal-body"></div></div>
+        </div>
+        <div id="video-modal-container" class="hidden">
+            <div id="video-modal-content">
+                <button id="video-modal-close-btn">×</button>
+                <video id="video-player" controls></video>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
